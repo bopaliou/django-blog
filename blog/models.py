@@ -7,6 +7,8 @@ class Article(models.Model):
     auteur = models.ForeignKey(User, on_delete=models.CASCADE,default=1)
     date_publication = models.DateTimeField(auto_now_add=True)
     est_publie = models.BooleanField(default=False)
+    image_couverture = models.URLField(blank=True, null=True)
+
     
     def __str__(self):
         return f"{self.titre} -  {self.auteur.username} " # Display title and author username

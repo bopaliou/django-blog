@@ -20,7 +20,11 @@
         <h1 class="text-5xl font-extrabold text-indigo-700 mb-6 leading-tight drop-shadow-md">
             {{ article.titre }}
         </h1>
-        
+        {% if article.image_couverture %}
+        <img src="{{ article.image_couverture }}" alt="Image couverture"
+            class="w-full h-64 object-cover rounded-md mb-6 shadow">
+        {% endif %}
+
         <article class="prose prose-indigo prose-lg max-w-none leading-relaxed">
             {{ article.contenu|linebreaksbr|safe }}
             <!-- Si ton contenu est en texte brut, remplace "|safe" par "|linebreaks" -->
